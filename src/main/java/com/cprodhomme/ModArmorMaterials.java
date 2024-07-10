@@ -30,7 +30,7 @@ public class ModArmorMaterials {
 		// The sound played when the armor is equipped.
 		SoundEvents.ITEM_ARMOR_EQUIP_LEATHER,
 		// The ingredient(s) used to repair the armor.
-		() -> Ingredient.ofItems(Items.LEATHER),
+		() -> Ingredient.ofItems(ModItems.WOLF_LEATHER),
 		0.0F,
 		0.0F,
 		// Guidite is NOT dyeable, so we will pass false.
