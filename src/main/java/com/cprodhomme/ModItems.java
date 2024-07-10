@@ -14,6 +14,9 @@ public class ModItems {
   public static final Item WOLF_LEGGINGS = register(new ArmorItem(ModArmorMaterials.WOLF, ArmorItem.Type.LEGGINGS, new Item.Settings()), "wolf_leggings");
   public static final Item WOLF_BOOTS = register(new ArmorItem(ModArmorMaterials.WOLF, ArmorItem.Type.BOOTS, new Item.Settings()), "wolf_boots");
 
+  public static final Item WOLF_LEATHER = register(new Item(new Item.Settings()), "wolf_leather");
+  public static final Item WOLF_TOOTH = register(new Item(new Item.Settings()), "wolf_tooth");
+
   public static void initialize() {
     ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
 		  .register((itemGroup) -> itemGroup.add(ModItems.WOLF_HELMET));
@@ -23,6 +26,11 @@ public class ModItems {
 		  .register((itemGroup) -> itemGroup.add(ModItems.WOLF_LEGGINGS));
     ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
       .register((itemGroup) -> itemGroup.add(ModItems.WOLF_BOOTS));
+
+    ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+      .register((itemGroup) -> itemGroup.add(ModItems.WOLF_LEATHER));
+    ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+      .register((itemGroup) -> itemGroup.add(ModItems.WOLF_TOOTH));
   }
 
 	public static Item register(Item item, String id) {
