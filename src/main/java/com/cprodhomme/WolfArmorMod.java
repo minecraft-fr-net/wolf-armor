@@ -21,5 +21,7 @@ public class WolfArmorMod implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 		ModArmorMaterials.initialize();
 		ModItems.initialize();
+
+		WolfDropHandler.register();
 	}
 }
