@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "wolf-armor-mod:wolf_leather"
+    }
+  },
+  "result": {
+    "id": "wolf-armor-mod:wolf_leggings",
+    "count": 1
+  }
+}
