@@ -22,7 +22,8 @@ public class ModArmorMaterials {
 			ArmorItem.Type.HELMET, 1,
 			ArmorItem.Type.CHESTPLATE, 3,
 			ArmorItem.Type.LEGGINGS, 2,
-			ArmorItem.Type.BOOTS, 1
+			ArmorItem.Type.BOOTS, 1,
+			ArmorItem.Type.BODY, 3
 		),
 		// Enchantability. For reference, leather has 15, iron has 9, and diamond has 10.
 		15,
