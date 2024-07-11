@@ -19,7 +19,7 @@ public class WolfDropHandler {
         }
 
         Random random = world.getRandom();
-        int leatherCount = random.nextBetween(1, 3 + lootingLevel);
+        int leatherCount = random.nextBetween(1, 1 + lootingLevel);
         int toothCount = random.nextBetween(0, 1 + lootingLevel);
 
         for (int i = 0; i < leatherCount; i++) {
