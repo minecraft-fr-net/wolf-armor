@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "LP",
-    "PP"
+    "PP",
+    "PL"
   ],
   "key": {
     "P": {
@@ -12,6 +12,7 @@
       "item": "wolf-armor-mod:wolf_leather"
     }
   },
+  "assume_symmetry": false,
   "result": {
     "id": "minecraft:book",
     "count": 1
