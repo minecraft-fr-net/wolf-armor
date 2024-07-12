@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " TS",
+    "# S",
+    " TS"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "T": {
+      "item": "wolf-armor-mod:wolf_tooth"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "id": "wolf-armor-mod:wolf_bow",
+    "count": 1
+  }
+}

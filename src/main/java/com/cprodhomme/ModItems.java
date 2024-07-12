@@ -2,6 +2,7 @@ package com.cprodhomme;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.BowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.SwordItem;
@@ -20,6 +21,7 @@ public class ModItems {
   public static final Item WOLF_TOOTH = register(new Item(new Item.Settings()), "wolf_tooth");
 
   public static final Item WOLF_SWORD = register(new SwordItem(ToolMaterials.STONE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.STONE, 3, -2.4F))), "wolf_sword");
+  public static final Item WOLF_BOW = register(new BowItem(new Item.Settings().maxDamage(384)), "wolf_bow");
 
   public static void initialize() {
     ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
@@ -33,6 +35,8 @@ public class ModItems {
 
     ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
       .register((itemGroup) -> itemGroup.add(ModItems.WOLF_SWORD));
+    ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+      .register((itemGroup) -> itemGroup.add(ModItems.WOLF_BOW));
 
     ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
       .register((itemGroup) -> itemGroup.add(ModItems.WOLF_LEATHER));
