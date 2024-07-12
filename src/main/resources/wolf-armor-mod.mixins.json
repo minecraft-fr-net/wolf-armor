@@ -3,7 +3,8 @@
 	"package": "com.cprodhomme.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"PowderSnowBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
