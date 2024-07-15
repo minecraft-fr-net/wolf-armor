@@ -1,4 +1,4 @@
-package com.cprodhomme;
+package net.minecraftfr.wolfarmormod;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerEntityCombatEvents;
 import net.minecraft.enchantment.EnchantmentHelper;

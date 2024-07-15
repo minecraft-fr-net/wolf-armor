@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.cprodhomme.WolfArmorMod"
+			"net.minecraftfr.wolfarmormod.WolfArmorMod"
 		],
 		"client": [
-			"com.cprodhomme.WolfArmorModClient"
+			"net.minecraftfr.wolfarmormod.WolfArmorModClient"
 		]
 	},
 	"mixins": [

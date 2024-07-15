@@ -1,4 +1,4 @@
-package com.cprodhomme;
+package net.minecraftfr.wolfarmormod;
 
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.item.Item;

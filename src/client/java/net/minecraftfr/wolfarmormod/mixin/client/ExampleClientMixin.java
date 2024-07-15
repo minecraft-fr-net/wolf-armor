@@ -1,4 +1,4 @@
-package com.cprodhomme.mixin.client;
+package net.minecraftfr.wolfarmormod.mixin.client;
 
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;

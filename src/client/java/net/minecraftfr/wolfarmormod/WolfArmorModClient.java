@@ -1,4 +1,4 @@
-package com.cprodhomme;
+package net.minecraftfr.wolfarmormod;
 
 import net.fabricmc.api.ClientModInitializer;
 
