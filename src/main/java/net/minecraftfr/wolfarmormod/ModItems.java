@@ -24,24 +24,22 @@ public class ModItems {
   public static final Item WOLF_BOW = register(new BowItem(new Item.Settings().maxDamage(384)), "wolf_bow");
 
   public static void initialize() {
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-		  .register((itemGroup) -> itemGroup.add(ModItems.WOLF_HELMET));
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-      .register((itemGroup) -> itemGroup.add(ModItems.WOLF_CHESTPLATE));
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-		  .register((itemGroup) -> itemGroup.add(ModItems.WOLF_LEGGINGS));
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-      .register((itemGroup) -> itemGroup.add(ModItems.WOLF_BOOTS));
+    ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(itemGroup -> {
+      // Armor
+      itemGroup.add(ModItems.WOLF_HELMET);
+      itemGroup.add(ModItems.WOLF_CHESTPLATE);
+      itemGroup.add(ModItems.WOLF_LEGGINGS);
+      itemGroup.add(ModItems.WOLF_BOOTS);
 
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-      .register((itemGroup) -> itemGroup.add(ModItems.WOLF_SWORD));
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-      .register((itemGroup) -> itemGroup.add(ModItems.WOLF_BOW));
+      // Weapon
+      itemGroup.add(ModItems.WOLF_SWORD);
+      itemGroup.add(ModItems.WOLF_BOW);
+    });
 
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-      .register((itemGroup) -> itemGroup.add(ModItems.WOLF_LEATHER));
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-      .register((itemGroup) -> itemGroup.add(ModItems.WOLF_TOOTH));
+    ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(itemGroup -> {
+      itemGroup.add(ModItems.WOLF_LEATHER);
+      itemGroup.add(ModItems.WOLF_TOOTH);
+    });
   }
 
 	public static Item register(Item item, String id) {
