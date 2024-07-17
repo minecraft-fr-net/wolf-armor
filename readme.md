@@ -1,3 +1,7 @@
+Add Wolf armor and weapons
+
+This is a Fabric mod.
+
 # Compatibility
 
 Mods tested with Wolf armor
