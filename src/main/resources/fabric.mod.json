@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "wolf-armor-mod",
+	"id": "wolf-armor",
 	"version": "${version}",
 	"name": "wolf armor mod",
 	"description": "This is an example description! Tell everyone what your mod is about!",
@@ -12,20 +12,20 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/wolf-armor-mod/icon.png",
+	"icon": "assets/wolf-armor/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.minecraftfr.wolfarmormod.WolfArmorMod"
+			"net.minecraftfr.wolfarmor.WolfArmor"
 		],
 		"client": [
-			"net.minecraftfr.wolfarmormod.WolfArmorModClient"
+			"net.minecraftfr.wolfarmor.WolfArmorClient"
 		]
 	},
 	"mixins": [
-		"wolf-armor-mod.mixins.json",
+		"wolf-armor.mixins.json",
 		{
-			"config": "wolf-armor-mod.client.mixins.json",
+			"config": "wolf-armor.client.mixins.json",
 			"environment": "client"
 		}
 	],

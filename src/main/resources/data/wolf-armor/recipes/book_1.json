@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PL",
+    "PP"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "L": {
+      "item": "wolf-armor:wolf_leather"
+    }
+  },
+  "assume_symmetry": false,
+  "result": {
+    "id": "minecraft:book",
+    "count": 1
+  }
+}

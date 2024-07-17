@@ -1,0 +1,6 @@
+{
+  "parent": "item/bow",
+  "textures": {
+    "layer0": "wolf-armor:item/wolf_bow_pulling_1"
+  }
+}

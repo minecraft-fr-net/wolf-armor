@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "wolf-armor:item/wolf_sword"
+  }
+}

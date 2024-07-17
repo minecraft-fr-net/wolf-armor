@@ -22,7 +22,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"wolf-armor-mod" {
+		"wolf-armor" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
