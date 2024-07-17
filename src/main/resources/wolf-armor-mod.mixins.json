@@ -3,7 +3,6 @@
 	"package": "net.minecraftfr.wolfarmormod.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin",
 		"PowderSnowBlockMixin"
 	],
 	"injectors": {
