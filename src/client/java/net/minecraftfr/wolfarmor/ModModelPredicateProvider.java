@@ -3,7 +3,6 @@ package net.minecraftfr.wolfarmor;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
-import net.minecraftfr.wolfarmor.ModItems;
 
 public class ModModelPredicateProvider {
   public static void registerModModels() {
