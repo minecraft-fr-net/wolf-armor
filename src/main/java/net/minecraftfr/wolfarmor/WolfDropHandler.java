@@ -8,6 +8,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.random.Random;
 
 public class WolfDropHandler {
+  public static Integer minDropWolfLeather = 1;
+  public static Integer maxDropWolfLeather = 1;
+  public static Integer minDropWolfTooth = 0;
+  public static Integer maxDropWolfTooth = 1;
+
   public static void register() {
     ServerEntityCombatEvents.AFTER_KILLED_OTHER_ENTITY.register((world, entity, killedEntity) -> {
       if (killedEntity instanceof WolfEntity) {
@@ -19,8 +24,8 @@ public class WolfDropHandler {
         }
 
         Random random = world.getRandom();
-        int leatherCount = random.nextBetween(1, 1 + lootingLevel);
-        int toothCount = random.nextBetween(0, 1 + lootingLevel);
+        int leatherCount = random.nextBetween(minDropWolfLeather, maxDropWolfLeather + lootingLevel);
+        int toothCount = random.nextBetween(minDropWolfTooth, maxDropWolfTooth + lootingLevel);
 
         for (int i = 0; i < leatherCount; i++) {
           killedEntity.dropItem(ModItems.WOLF_LEATHER);
