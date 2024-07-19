@@ -3,9 +3,9 @@
 	"id": "wolf-armor",
 	"version": "${version}",
 	"name": "wolf armor mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Add Wolf armor and weapons",
 	"authors": [
-		"Me!"
+		"cprodhomme"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
