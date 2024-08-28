@@ -10,7 +10,7 @@ public class ModModelPredicateProvider {
   }
 
   private static void registerBow(Item bow) {
-    ModelPredicateProviderRegistry.register(bow, new Identifier("pull"),
+    ModelPredicateProviderRegistry.register(bow, Identifier.of(Identifier.DEFAULT_NAMESPACE, "pull"),
       (stack, world, entity, seed) -> {
         if (entity == null) {
           return 0.0f;
@@ -21,7 +21,7 @@ public class ModModelPredicateProvider {
         return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
       });
 
-    ModelPredicateProviderRegistry.register(bow, new Identifier("pulling"),
+    ModelPredicateProviderRegistry.register(bow, Identifier.of(Identifier.DEFAULT_NAMESPACE, "pulling"),
       (stack, world, entity, seed) -> entity != null && entity.isUsingItem()
         && entity.getActiveItem() == stack ? 1.0f : 0.0f);
   }
