@@ -2,6 +2,7 @@ package net.minecraftfr.wolfarmor;
 
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 
 public class ModModelPredicateProvider {
@@ -10,19 +11,18 @@ public class ModModelPredicateProvider {
   }
 
   private static void registerBow(Item bow) {
-    ModelPredicateProviderRegistry.register(bow, Identifier.of(Identifier.DEFAULT_NAMESPACE, "pull"),
-      (stack, world, entity, seed) -> {
-        if (entity == null) {
-          return 0.0f;
-        }
-        if (entity.getActiveItem() != stack) {
-          return 0.0f;
-        }
-        return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
-      });
+    ModelPredicateProviderRegistry.register(bow, Identifier.ofVanilla("pull"), (stack, world, entity, seed) -> {
+			if (entity == null) {
+				return 0.0F;
+			} else {
+				return entity.getActiveItem() != stack ? 0.0F : (float)(stack.getMaxUseTime(entity) - entity.getItemUseTimeLeft()) / 20.0F;
+			}
+		});
 
-    ModelPredicateProviderRegistry.register(bow, Identifier.of(Identifier.DEFAULT_NAMESPACE, "pulling"),
-      (stack, world, entity, seed) -> entity != null && entity.isUsingItem()
-        && entity.getActiveItem() == stack ? 1.0f : 0.0f);
+    ModelPredicateProviderRegistry.register(
+			bow,
+			Identifier.ofVanilla("pulling"),
+			(stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F
+		);
   }
 }
