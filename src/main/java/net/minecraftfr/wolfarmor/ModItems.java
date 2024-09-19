@@ -21,6 +21,7 @@ public class ModItems {
   public static final Item WOLF_TOOTH = register(new Item(new Item.Settings()), "wolf_tooth");
 
   public static final Item WOLF_SWORD = register(new SwordItem(ToolMaterials.STONE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.STONE, 3, -2.4F))), "wolf_sword");
+  public static final Item WOLF_DAGGER = register(new SwordItem(ToolMaterials.STONE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.STONE, 2, -1.9F))), "wolf_dagger");
   public static final Item WOLF_BOW = register(new BowItem(new Item.Settings().maxDamage(384)), "wolf_bow");
 
   public static void initialize() {
@@ -33,6 +34,7 @@ public class ModItems {
 
       // Weapon
       itemGroup.add(ModItems.WOLF_SWORD);
+      itemGroup.add(ModItems.WOLF_DAGGER);
       itemGroup.add(ModItems.WOLF_BOW);
     });
 
