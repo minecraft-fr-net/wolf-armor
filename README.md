@@ -8,3 +8,4 @@ Add Wolf armor and weapons
 Mods tested with Wolf armor
 
 - [Helmet Overlay](https://github.com/minecraft-fr-net/helmet-overlay-mod)
+- [Better Combat](https://modrinth.com/mod/better-combat)
