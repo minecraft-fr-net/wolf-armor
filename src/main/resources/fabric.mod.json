@@ -2,14 +2,14 @@
 	"schemaVersion": 1,
 	"id": "wolf-armor",
 	"version": "${version}",
-	"name": "wolf armor mod",
+	"name": "Wolf Armor",
 	"description": "Add Wolf armor and weapons",
 	"authors": [
 		"cprodhomme"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/wolf-armor",
+		"sources": "https://github.com/minecraft-fr-net/wolf-armor"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/wolf-armor/icon.png",
