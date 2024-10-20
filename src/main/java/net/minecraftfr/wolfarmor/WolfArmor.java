@@ -1,7 +1,7 @@
 package net.minecraftfr.wolfarmor;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.entity.EntityType;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.ItemEntry;
@@ -22,7 +22,7 @@ public class WolfArmor implements ModInitializer {
 		ModArmorMaterials.initialize();
 		ModItems.initialize();
 
-		LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
+		LootTableEvents.MODIFY.register((key, supplier, source, registries) -> {
 			// Vérification si la table de loot correspond à celle du loup
 			if (EntityType.WOLF.getLootTableId().equals(key)) {
 				LootPool leatherPool = LootPool.builder()
@@ -35,8 +35,8 @@ public class WolfArmor implements ModInitializer {
 												.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 1.0f))))
 								.build();
 
-				tableBuilder.pool(leatherPool);
-				tableBuilder.pool(toothPool);
+				supplier.pool(leatherPool);
+				supplier.pool(toothPool);
 			}
 		});
 	}
