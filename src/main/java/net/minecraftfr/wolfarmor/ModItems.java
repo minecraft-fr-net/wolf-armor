@@ -1,57 +1,53 @@
 package net.minecraftfr.wolfarmor;
 
+import java.util.function.Function;
+
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-  public static final Item WOLF_HELMET = register(new ArmorItem(ModArmorMaterials.WOLF, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(5))), "wolf_helmet");
-  public static final Item WOLF_CHESTPLATE = register(new ArmorItem(ModArmorMaterials.WOLF, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(5))), "wolf_chestplate");
-  public static final Item WOLF_LEGGINGS = register(new ArmorItem(ModArmorMaterials.WOLF, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(5))), "wolf_leggings");
-  public static final Item WOLF_BOOTS = register(new ArmorItem(ModArmorMaterials.WOLF, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(5))), "wolf_boots");
+	public static final Item WOLF_HELMET = register("wolf_helmet", s -> new Item(s.armor(ModArmorMaterials.WOLF, EquipmentType.HELMET)));
+	public static final Item WOLF_CHESTPLATE = register("wolf_chestplate", s -> new Item(s.armor(ModArmorMaterials.WOLF, EquipmentType.CHESTPLATE)));
+	public static final Item WOLF_LEGGINGS = register("wolf_leggings", s -> new Item(s.armor(ModArmorMaterials.WOLF, EquipmentType.LEGGINGS)));
+	public static final Item WOLF_BOOTS = register("wolf_boots", s -> new Item(s.armor(ModArmorMaterials.WOLF, EquipmentType.BOOTS)));
 
-  public static final Item WOLF_LEATHER = register(new Item(new Item.Settings()), "wolf_leather");
-  public static final Item WOLF_TOOTH = register(new Item(new Item.Settings()), "wolf_tooth");
+	public static final Item WOLF_LEATHER = register("wolf_leather", Item::new);
+	public static final Item WOLF_TOOTH = register("wolf_tooth", Item::new);
 
-  public static final Item WOLF_SWORD = register(new SwordItem(ToolMaterials.STONE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.STONE, 3, -2.4F))), "wolf_sword");
-  public static final Item WOLF_DAGGER = register(new SwordItem(ToolMaterials.STONE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.STONE, 2, -1.9F))), "wolf_dagger");
-  public static final Item WOLF_BOW = register(new BowItem(new Item.Settings().maxDamage(384)), "wolf_bow");
+	public static final Item WOLF_SWORD = register("wolf_sword", s -> new Item(s.sword(ToolMaterial.STONE, 3, -2.4F)));
+	public static final Item WOLF_DAGGER = register("wolf_dagger", s -> new Item(s.sword(ToolMaterial.STONE, 2, -1.9F)));
+	public static final Item WOLF_BOW = register("wolf_bow", s -> new BowItem(s.maxDamage(384)));
 
-  public static void initialize() {
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(itemGroup -> {
-      // Armor
-      itemGroup.add(ModItems.WOLF_HELMET);
-      itemGroup.add(ModItems.WOLF_CHESTPLATE);
-      itemGroup.add(ModItems.WOLF_LEGGINGS);
-      itemGroup.add(ModItems.WOLF_BOOTS);
+	public static void initialize() {
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(itemGroup -> {
+			itemGroup.add(ModItems.WOLF_HELMET);
+			itemGroup.add(ModItems.WOLF_CHESTPLATE);
+			itemGroup.add(ModItems.WOLF_LEGGINGS);
+			itemGroup.add(ModItems.WOLF_BOOTS);
+			itemGroup.add(ModItems.WOLF_SWORD);
+			itemGroup.add(ModItems.WOLF_DAGGER);
+			itemGroup.add(ModItems.WOLF_BOW);
+		});
 
-      // Weapon
-      itemGroup.add(ModItems.WOLF_SWORD);
-      itemGroup.add(ModItems.WOLF_DAGGER);
-      itemGroup.add(ModItems.WOLF_BOW);
-    });
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(itemGroup -> {
+			itemGroup.add(ModItems.WOLF_LEATHER);
+			itemGroup.add(ModItems.WOLF_TOOTH);
+		});
+	}
 
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(itemGroup -> {
-      itemGroup.add(ModItems.WOLF_LEATHER);
-      itemGroup.add(ModItems.WOLF_TOOTH);
-    });
-  }
-
-	public static Item register(Item item, String id) {
-		// Create the identifier for the item.
-		Identifier itemID = Identifier.of(WolfArmor.MOD_ID, id);
-
-		// Register the item.
-		Item registeredItem = Registry.register(Registries.ITEM, itemID, item);
-
-		// Return the registered item!
-		return registeredItem;
+	private static Item register(String id, Function<Item.Settings, Item> factory) {
+		Identifier itemId = Identifier.of(WolfArmor.MOD_ID, id);
+		RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, itemId);
+		Item item = factory.apply(new Item.Settings().registryKey(key));
+		return Registry.register(Registries.ITEM, itemId, item);
 	}
 }

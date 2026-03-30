@@ -7,5 +7,6 @@
   "item.wolf-armor.wolf_dagger": "Wolf Dagger",
   "item.wolf-armor.wolf_bow": "Wolf Bow",
   "item.wolf-armor.wolf_leather": "Wolf Leather",
-  "item.wolf-armor.wolf_tooth": "Wolf Tooth"
+  "item.wolf-armor.wolf_tooth": "Wolf Tooth",
+  "tag.item.wolf-armor.repairs_wolf_armor": "Wolf Leather"
 }

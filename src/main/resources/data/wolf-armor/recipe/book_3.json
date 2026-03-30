@@ -5,12 +5,8 @@
     "PL"
   ],
   "key": {
-    "P": {
-      "item": "minecraft:paper"
-    },
-    "L": {
-      "item": "wolf-armor:wolf_leather"
-    }
+    "P": "minecraft:paper",
+    "L": "wolf-armor:wolf_leather"
   },
   "assume_symmetry": false,
   "result": {

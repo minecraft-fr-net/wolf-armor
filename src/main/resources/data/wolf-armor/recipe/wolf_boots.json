@@ -5,9 +5,7 @@
     "# #"
   ],
   "key": {
-    "#": {
-      "item": "wolf-armor:wolf_leather"
-    }
+    "#": "wolf-armor:wolf_leather"
   },
   "result": {
     "id": "wolf-armor:wolf_boots",

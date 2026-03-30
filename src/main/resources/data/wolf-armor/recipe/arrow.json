@@ -6,15 +6,9 @@
     "F"
   ],
   "key": {
-    "T": {
-      "item": "wolf-armor:wolf_tooth"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "F": {
-      "item": "minecraft:feather"
-    }
+    "T": "wolf-armor:wolf_tooth",
+    "S": "minecraft:stick",
+    "F": "minecraft:feather"
   },
   "result": {
     "id": "minecraft:arrow",

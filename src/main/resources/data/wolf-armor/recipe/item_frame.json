@@ -6,12 +6,8 @@
     "///"
   ],
   "key": {
-    "/": {
-      "item": "minecraft:stick"
-    },
-    "L": {
-      "item": "wolf-armor:wolf_leather"
-    }
+    "/": "minecraft:stick",
+    "L": "wolf-armor:wolf_leather"
   },
   "result": {
     "id": "minecraft:item_frame",

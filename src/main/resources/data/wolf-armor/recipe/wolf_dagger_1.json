@@ -5,12 +5,8 @@
     "S "
   ],
   "key": {
-    "T": {
-      "item": "wolf-armor:wolf_tooth"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "T": "wolf-armor:wolf_tooth",
+    "S": "minecraft:stick"
   },
   "result": {
     "id": "wolf-armor:wolf_dagger",

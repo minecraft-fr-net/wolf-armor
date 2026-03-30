@@ -1,0 +1,20 @@
+{
+	"layers": {
+		"humanoid": [
+			{
+				"texture": "wolf-armor:wolf_layer_1"
+			},
+			{
+				"texture": "wolf-armor:wolf_layer_2"
+			}
+		],
+		"humanoid_leggings": [
+			{
+				"texture": "wolf-armor:wolf_layer_1"
+			},
+			{
+				"texture": "wolf-armor:wolf_layer_2"
+			}
+		]
+	}
+}

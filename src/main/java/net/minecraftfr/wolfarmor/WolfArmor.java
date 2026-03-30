@@ -23,8 +23,7 @@ public class WolfArmor implements ModInitializer {
 		ModItems.initialize();
 
 		LootTableEvents.MODIFY.register((key, supplier, source, registries) -> {
-			// Vérification si la table de loot correspond à celle du loup
-			if (EntityType.WOLF.getLootTableId().equals(key)) {
+			if (EntityType.WOLF.getLootTableKey().map(k -> k.equals(key)).orElse(false)) {
 				LootPool leatherPool = LootPool.builder()
 								.with(ItemEntry.builder(ModItems.WOLF_LEATHER)
 												.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f))))
